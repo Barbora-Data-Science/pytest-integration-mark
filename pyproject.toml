@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "pytest_integration_utils"
+version = "0.1.0"
+description = "Automatic integration test marking and excluding plugin for pytest"
+
+authors = ["Saulius Beinorius <saulius.beinorius@gmail.com>"]
+maintainers = ["Saulius Beinorius <saulius.beinorius@gmail.com>"]
+
+license = "Apache-2.0"
+readme = "README.md"
+
+homepage = "https://github.com/Barbora-Data-Science/pytest-integration-mark"
+repository = "https://github.com/Barbora-Data-Science/pytest-integration-mark"
+classifiers = [
+    "Topic :: Software Development :: Libraries :: Python Modules"
+]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+pytest = ">=5.2,<7.0"
+
+[tool.poetry.dev-dependencies]
+black = "^21.7b0"
+
+[tool.poetry.plugins.pytest11]
+pytest_integration_mark = "pytest_integration_mark.hooks"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
